@@ -2,6 +2,7 @@ package com.google.firebase.udacity.friendlychat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -9,8 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+//import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import static com.firebase.ui.auth.AuthUI.TAG;
 
 public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
     public MessageAdapter(Context context, int resource, List<FriendlyMessage> objects) {
@@ -33,6 +37,12 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         if (isPhoto) {
             messageTextView.setVisibility(View.GONE);
             photoImageView.setVisibility(View.VISIBLE);
+            Log.d(TAG, "getView: " + message.getPhotoUrl().toString());
+//            Picasso.get()
+//                    .load((message.getPhotoUrl()).toString())
+//                    .resize(50, 50)
+//                    .into(photoImageView);
+//
             Glide.with(photoImageView.getContext())
                     .load(message.getPhotoUrl())
                     .into(photoImageView);

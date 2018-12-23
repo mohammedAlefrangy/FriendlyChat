@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId "com.google.firebase.udacity.friendlychat"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -40,9 +40,14 @@ dependencies {
 
     // Displaying images
     implementation 'com.github.bumptech.glide:glide:4.7.1'
+//    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // add Realtime Database
     implementation 'com.google.firebase:firebase-database:16.0.5'
+    implementation 'com.google.firebase:firebase-auth:16.1.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.5'
+
 
 }
 
